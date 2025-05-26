@@ -46,7 +46,7 @@ public class FilmeController {
         return "redirect:/filme";
     }
 
-    @GetMapping("/product/edit/{id}")
+    @GetMapping("/filme/edit/{id}")
     public String edit(@PathVariable Long id, Model model) {
         Filme filme = filmeService.getFilmeById(id);
         model.addAttribute("filme", filme);
