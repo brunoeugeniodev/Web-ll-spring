@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <th:block
+    th:replace="~{/../fragments/head :: head('Listar Produto')}"
+  ></th:block>
+  <body>
+    <th:block th:replace="~{/../fragments/head :: header}"></th:block>
+    <div class="container">
+      <h1>Listagem de Produto</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Estoque</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="product : ${productsList}">
+            <td scope="row" th:text="${product.name}"></td>
+            <td scope="row" th:text="${product.description}"></td>
+            <td scope="row" th:text="${product.price}"></td>
+            <td scope="row" th:text="${product.stock}"></td>
+            <td>
+              <a th:href="@{/product/edit/{id}(id=${product.id})}">Editar</a>
+            </td>
+            <td>
+              <a th:href="@{/product/delete/{id}(id=${product.id})}">Deletar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row">
+        <a th:href="@{/product/create}">
+          <button sec:authorize="hasAuthority('Admin')" class="btn btn-primary">Cadastrar Produto</button>
+        </a>
+      </div>
+    </div>
+  <th:block th:replace="~{/../fragments/footer :: footer}"></th:block>
+  </body>
+</html>
