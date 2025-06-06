@@ -1,6 +1,6 @@
 package com.example.PWIIJava.service;
 
-import com.example.PWIIJava.model.User;;
+import com.example.PWIIJava.model.User;
 
 public interface IUserService {
 	
