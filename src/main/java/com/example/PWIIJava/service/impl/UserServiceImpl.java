@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.PWIIJava.model.User;
 import com.example.PWIIJava.repository.UserRepository;
-import com.example.PWIIJava.service.IUserService;;
+import com.example.PWIIJava.service.IUserService;
 
 @Service
 public class UserServiceImpl implements IUserService, UserDetailsService {

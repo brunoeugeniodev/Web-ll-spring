@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -24,12 +25,12 @@ public class Filme {
     @Column(name = "description")
     private String description;
 
-    @NotBlank(message= "Informe um preço válido")
+    @NotNull(message= "Informe um preço válido")
+    //@Min(0)
     @Column(name = "price", nullable = false)
     private Float price;
 
-
-    @NotBlank(message= "Informe uma quantidade de estoque válida")
+    @NotNull(message= "Informe uma quantidade de estoque válida") 
     @Column(name = "stock", nullable = false)
     private Integer stock;
 
